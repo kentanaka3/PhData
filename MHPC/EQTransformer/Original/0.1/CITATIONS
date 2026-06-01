@@ -1,0 +1,51 @@
+# This file contains all citations reported by the modules used.
+# All of these references should be cited in manuscripts using this catalog.
+# Please note that the format might be heterogeneous.
+# Remember that additional citations (data, velocity models, obspy, ...) might be adequate.
+
+
+seisbench.catalog - tbd
+
+@article{heimann2017pyrocko,
+  title={Pyrocko-An open-source seismology toolbox and library},
+  author={Heimann, Sebastian and Kriegerowski, Marius and Isken, Marius and Cesca, Simone and Daout, Simon and Grigoli, Francesco and Juretzek, Carina and Megies, Tobias and Nooshiri, Nima and Steinberg, Andreas and others},
+  year={2017},
+  publisher={GFZ Data Services}
+}
+
+@article{woollam2022seisbench,
+  title={SeisBench—A toolbox for machine learning in seismology},
+  author={Woollam, Jack and M{"u}nchmeyer, Jannes and Tilmann, Frederik and Rietbrock, Andreas and Lange, Dietrich and Bornstein, Thomas and Diehl, Tobias and Giunchi, Carlo and Haslinger, Florian and Jozinovi{'c}, Dario and others},
+  journal={Seismological Research Letters},
+  volume={93},
+  number={3},
+  pages={1695--1709},
+  year={2022},
+  publisher={GeoScienceWorld}
+}
+
+Mousavi, S.M., Ellsworth, W.L., Zhu, W., Chuang, L, Y., and Beroza, G, C. Earthquake transformer—an attentive deep-learning model for simultaneous earthquake detection and phase picking. Nat Commun 11, 3952 (2020). https://doi.org/10.1038/s41467-020-17591-w
+
+Original (conservative) EQTransformer model from Mousavi et al. (2020). Originally published under MIT License. Original available at https://github.com/smousavi05/EQTransformer/blob/01bf112a00c1a3bbb43adb2c7dba3e21b5fbcdb9/ModelsAndSampleData/EqT_model_conservative.h5 . 
+
+Converted to SeisBench by Jannes Münchmeyer (munchmej@gfz-potsdam.de) and Calum Chamberlain (calum.chamberlain@vuw.ac.nz).
+
+@article{zhu2022earthquake,
+title={Earthquake phase association using a Bayesian Gaussian mixture model},
+author={Zhu, Weiqiang and McBrearty, Ian W and Mousavi, S Mostafa and Ellsworth, William L and Beroza, Gregory C},
+journal={Journal of Geophysical Research: Solid Earth},
+volume={127},
+number={5},
+pages={e2021JB023249},
+year={2022},
+publisher={Wiley Online Library}
+}
+
+@article{lomax2000probabilistic,
+  title={Probabilistic earthquake location in 3D and layered models: Introduction of a Metropolis-Gibbs method and comparison with linear locations},
+  author={Lomax, Anthony and Virieux, Jean and Volant, Philippe and Berge-Thierry, Catherine},
+  journal={Advances in seismic event location},
+  pages={101--134},
+  year={2000},
+  publisher={Springer}
+}
