@@ -1,0 +1,51 @@
+log_level: DEBUG
+output_path: catalogs/NEW/PhaseNet/SCEDC/0.1/2024
+data:
+  _target_: OGS.src.ogsdata.SquirrelDataSource
+  env: ogsDB
+  persistent: v1
+  check: false
+  index_workers: null
+  copy_to_tmp: true
+  filesystem_groups: true
+  paths:
+    - /Volumes/Expansion/KEN/waveforms
+    - /Volumes/Expansion/KEN/station
+  channel_priorities:
+    - HH?
+    - EH?
+    - HN?
+    - HG?
+    - BH?
+  starttime: "2024-03-20"
+  endtime: "2024-06-21"
+  velocity_model:
+    _target_: pandas.read_csv
+    filepath_or_buffer: OGS/data/VelocityModel/1D/VelocityModel.csv
+group_modules:
+  picker:
+    _target_: ml_catalog.modules.SeisBenchPicker
+    model:
+      _target_: seisbench.models.PhaseNet.from_pretrained
+      name: scedc
+    classify_args:
+      P_threshold: 0.1
+      S_threshold: 0.1
+      batch_size: 1024
+    prefetch_segments: 1
+    amplitude_extractor:
+      _target_: OGS.src.ogspicker.OGSAmplitudeExtractor
+      parallel: false
+merge_module:
+  _target_: OGS.src.ogsnoop.MergePicks
+joint_modules: {}
+builder:
+  outputs:
+    - picks
+cluster:
+  _target_: dask.distributed.LocalCluster
+  n_workers: 1
+  threads_per_worker: 1
+  processes: false
+  dashboard_address: :8989
+libpath: .
